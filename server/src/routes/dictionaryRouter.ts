@@ -7,7 +7,7 @@ import {
 
 const router = Router();
 
+router.get("/:word/:partofspeech", getWordAndPartOfSpeech);
 router.get("/:word", getWord);
-router.get("/:word:/:partofspeech");
 
 export default router;
