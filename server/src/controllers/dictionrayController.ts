@@ -19,9 +19,7 @@ export const getWordAndPartOfSpeech: Handler = async (req, res, next) => {
       word,
       partofspeech
     );
-    return res.json({
-      wordDefinision,
-    });
+    return res.send(wordDefinision);
   } catch (err) {
     return next({ status: 400, message: { error: err } });
   }
@@ -31,9 +29,7 @@ export const randomWordBySpeech: Handler = async (req, res, next) => {
   try {
     const { part } = req.params;
     const wordDefinision = await dictionaryService.randomWordBySpeech(part);
-    return res.send({
-      wordDefinision,
-    });
+    return res.send(wordDefinision);
   } catch (err) {
     return next({ status: 400, message: { erorr: err } });
   }

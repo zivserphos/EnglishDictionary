@@ -9,7 +9,7 @@ import {
 const router = Router();
 
 router.get("/part-of-speech/:part", randomWordBySpeech);
-router.get("/:word/:partofspeech", getWordAndPartOfSpeech);
-router.get("/:word", getWord);
+router.get("/words/:word/:partofspeech", getWordAndPartOfSpeech);
+router.get("/words/:word", getWord);
 
 export default router;

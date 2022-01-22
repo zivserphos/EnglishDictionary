@@ -7,17 +7,21 @@ const getWord = async (word: string) => {
   const params = genParams(`word = :w`, word);
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const response = await docClient.query(params).promise();
+  console.log(response);
   return {
-    word: response.Items,
+    data: response.Items,
   };
 };
 
 const getWordAndPartOfSpeech = async (word: string, partofspeech: string) => {
+  console.log(partofspeech);
   if (!isPartOfSpeech(partofspeech)) throw new Error("invalid part of speech");
   const params = genParams("word = :w and pos = :p", word, partofspeech);
+  console.log(params);
   const response = await docClient.query(params).promise();
+  console.log(response.Items);
   return {
-    words: response.Items,
+    data: response.Items,
   };
 };
 
@@ -25,14 +29,16 @@ const randomWordBySpeech = async (part: string) => {
   if (!isPartOfSpeech(part)) throw new Error("invalid part of speech");
   let validWord = false;
   let response;
-  const word = await genRandomWord();
-  const params = genParams(`word = :w and pos = :p`, word.toUpperCase(), part);
+  let word = await genRandomWord();
+  let params = genParams(`word = :w and pos = :p`, word.toUpperCase(), part);
   while (!validWord) {
+    word = await genRandomWord();
+    params = genParams(`word = :w and pos = :p`, word.toUpperCase(), part);
     response = await docClient.query(params).promise();
     if (response.Count) validWord = true;
   }
   return {
-    word: response?.Items,
+    data: response?.Items,
   };
 };
 
