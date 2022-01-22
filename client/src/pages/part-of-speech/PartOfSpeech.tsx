@@ -18,7 +18,7 @@ const PartOfSpeech = () => {
         const res = await axios.get(
           `/api/part-of-speech/${pos}${letter ? `?letter=${letter}` : ""}`
         );
-        setWordState(res.data);
+        setWordState(res.data.data[0]);
       } catch (error) {
         if (notyf) {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -44,7 +44,7 @@ const PartOfSpeech = () => {
                   to={`/words/${word.replace(/[^0-9a-z]/gi, "")}`}
                   key={`link-${i}`}
                 >
-                  {word}{" "}
+                  {word}
                 </Link>
               ))}
               <br />

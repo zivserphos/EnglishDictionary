@@ -29,6 +29,7 @@ export const randomWordBySpeech: Handler = async (req, res, next) => {
   try {
     const { part } = req.params;
     const wordDefinision = await dictionaryService.randomWordBySpeech(part);
+    console.log(wordDefinision);
     return res.send(wordDefinision);
   } catch (err) {
     return next({ status: 400, message: { erorr: err } });

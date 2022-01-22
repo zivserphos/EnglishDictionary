@@ -8,7 +8,6 @@ import errorHandler from "./middlewares/errorHandlers";
 import DictionaryRouter from "./routes/dictionaryRouter";
 import unknownEndPoint from "./controllers/unknownEndpoint";
 import render from "./controllers/render";
-// import serverless from "serverless-http";
 
 const app = express();
 
