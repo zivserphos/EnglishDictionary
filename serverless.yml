@@ -1,13 +1,28 @@
-# service: aws-node-express-api
-# frameworkVersion: "2 || 3"
+service: dynamodb-dictionary-api
 
-# provider:
-#   name: aws
-#   runtime: nodejs12.x
-#   lambdaHashingVersion: "20201221"
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: eu-west-1
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+          Resource: arn:aws:dynamodb:eu-west-1:820337454400:table/dictionary
 
-# functions:
-#   api:
-#     handler: handler.handler
-#     events:
-#       - httpApi: "*"
+plugins:
+  - serverless-iam-roles-per-function
+
+functions:
+  api:
+    handler: build/index.handler
+    name: dictionary
+    memorySize: 128 # mb
+    timeout: 15 # seconds
+    events:
+      - httpApi: '*'
