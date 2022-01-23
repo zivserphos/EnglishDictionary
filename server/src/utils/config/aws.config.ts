@@ -7,6 +7,7 @@ const awsConfig = {
   accessKeyId: config.AWS_accessKeyId,
   secretAccessKey: config.Aws_secretAccessKey,
 };
+console.log(awsConfig);
 AWS.config.update(awsConfig);
 
 const docClient = new AWS.DynamoDB.DocumentClient();

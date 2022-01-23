@@ -2,8 +2,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-console.log(process.env.AWS_ACCESS_KEY_ID);
-
 export default {
   port: process.env.PORT || 3001,
   AWS_accessKeyId: process.env.AWS_ACCESS_KEY_ID || "",
