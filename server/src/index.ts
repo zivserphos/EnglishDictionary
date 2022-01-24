@@ -1,7 +1,10 @@
 /* eslint-disable import/prefer-default-export */
-import serverless from "serverless-http";
+// import serverless from "serverless-http";
 import app from "./app";
+import config from "./utils/index";
 
-const handler = serverless(app);
+const PORT = config.port;
 
-export { handler };
+app.listen(PORT, () => {
+  console.log(`app is running at ${PORT}`);
+});

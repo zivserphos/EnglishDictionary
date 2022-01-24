@@ -1,12 +1,13 @@
+/* eslint-disable no-param-reassign */
 import { Handler } from "express";
 import dictionaryService from "../services/dictionary";
-import { genHeaders } from "../services/helpers";
 
 export const getWord: Handler = async (req, res, next) => {
   try {
-    genHeaders(res);
+    res.setHeader("Access-Control-Allow-Origin", "*");
     const word = req.params.word.toUpperCase();
     const wordDefinision = await dictionaryService.getWord(word);
+    console.log(res);
     return res.send(wordDefinision);
   } catch (err) {
     return next({ status: 400, message: { erorr: err } });
@@ -15,7 +16,8 @@ export const getWord: Handler = async (req, res, next) => {
 
 export const getWordAndPartOfSpeech: Handler = async (req, res, next) => {
   try {
-    genHeaders(res);
+    console.log("hereee");
+    res.setHeader("Access-Control-Allow-Origin", "*");
     const word = req.params.word.toUpperCase();
     const { partofspeech } = req.params;
     const wordDefinision = await dictionaryService.getWordAndPartOfSpeech(
@@ -30,7 +32,7 @@ export const getWordAndPartOfSpeech: Handler = async (req, res, next) => {
 
 export const randomWordBySpeech: Handler = async (req, res, next) => {
   try {
-    genHeaders(res);
+    res.setHeader("Access-Control-Allow-Origin", "*");
     const { part } = req.params;
     const wordDefinision = await dictionaryService.randomWordBySpeech(part);
     console.log(wordDefinision);
