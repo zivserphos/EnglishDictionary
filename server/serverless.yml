@@ -17,6 +17,7 @@ provider:
 
 plugins:
   - serverless-iam-roles-per-function
+
 functions:
   api:
     handler: build/index.handler
