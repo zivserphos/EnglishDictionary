@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.text());
-app.use(express.static(path.resolve("../client/build")));
+app.use(express.static(path.resolve("./client")));
 app.use(
   morganHandler,
   morgan(":method :url :status :res[content-length] - :response-time ms :body")
