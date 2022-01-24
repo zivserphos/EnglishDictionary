@@ -24,5 +24,6 @@ functions:
     name: dictionary
     memorySize: 128 # mb
     timeout: 15 # seconds
-    events:
+    events: 
       - httpApi: '*'
+      

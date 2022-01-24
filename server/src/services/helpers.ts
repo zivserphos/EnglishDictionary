@@ -1,8 +1,13 @@
 import axios from "axios";
+import { Response } from "express";
 
 const TABLE_NAME = "dictionary";
 
 const validSpeech = ["adv.", "n.", "v.", "prep.", "conj.", "interj.", "pron."];
+
+export const genHeaders = (res: Response) => {
+  res.writeHead(200, { "Access-Control-Allow-Origin": "*" });
+};
 
 export const genParams = (
   keyCon: string,
