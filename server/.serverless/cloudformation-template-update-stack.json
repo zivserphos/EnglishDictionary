@@ -170,7 +170,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/dynamodb-dictionary-api/dev/1643006738326-2022-01-24T06:45:38.326Z/dynamodb-dictionary-api.zip"
+          "S3Key": "serverless/dynamodb-dictionary-api/dev/1643007064022-2022-01-24T06:51:04.022Z/dynamodb-dictionary-api.zip"
         },
         "Handler": "build/index.handler",
         "Runtime": "nodejs14.x",
