@@ -191,7 +191,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/dynamodb-dictionary-api/dev/1643010608084-2022-01-24T07:50:08.084Z/dynamodb-dictionary-api.zip"
+                "S3Key": "serverless/dynamodb-dictionary-api/dev/1643010949285-2022-01-24T07:55:49.285Z/dynamodb-dictionary-api.zip"
               },
               "Handler": "build/index.handler",
               "Runtime": "nodejs14.x",
@@ -209,14 +209,14 @@
               "ApiLogGroup"
             ]
           },
-          "ApiLambdaVersiongObajUG1VCr0TGLjSwsDeB170OD18OBUWDszkqSY": {
+          "ApiLambdaVersionLraQz12rg3BUZ2G9PJ42Tj158EhjIyTP00hGKotR0": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "/TTWHFDlUJkqW8XL8El4Er1gj0BEDjk9JiXZMV3MlOg="
+              "CodeSha256": "S3hGG4c2Y6i0EdwAj5WP0WQSNpRwG+3Mw4RPNa/9Hfw="
             }
           },
           "HttpApi": {
@@ -324,7 +324,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersiongObajUG1VCr0TGLjSwsDeB170OD18OBUWDszkqSY"
+              "Ref": "ApiLambdaVersionLraQz12rg3BUZ2G9PJ42Tj158EhjIyTP00hGKotR0"
             },
             "Export": {
               "Name": "sls-dynamodb-dictionary-api-dev-ApiLambdaFunctionQualifiedArn"
@@ -470,7 +470,7 @@
         "memory": 128,
         "runtime": "nodejs14.x",
         "vpc": {},
-        "versionLogicalId": "ApiLambdaVersiongObajUG1VCr0TGLjSwsDeB170OD18OBUWDszkqSY"
+        "versionLogicalId": "ApiLambdaVersionLraQz12rg3BUZ2G9PJ42Tj158EhjIyTP00hGKotR0"
       }
     },
     "configValidationMode": "warn",
@@ -494,7 +494,7 @@
     "artifact": "C:\\Users\\zivfr\\OneDrive\\מסמכים\\GitHub\\EnglishDictionary\\server\\.serverless\\dynamodb-dictionary-api.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/dynamodb-dictionary-api/dev/1643010608084-2022-01-24T07:50:08.084Z",
+    "artifactDirectoryName": "serverless/dynamodb-dictionary-api/dev/1643010949285-2022-01-24T07:55:49.285Z",
     "artifact": "dynamodb-dictionary-api.zip"
   }
 }
